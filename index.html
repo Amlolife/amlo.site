@@ -1,296 +1,295 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>AMLO - Photography Pose Guide</title>
-    <meta name="description" content="11,000+ photography poses. 13 categories. Rp 79.000.">
-    
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='white' stroke='white' stroke-width='2' rx='8'/><circle cx='50' cy='50' r='15' fill='black'/><circle cx='50' cy='50' r='8' fill='white'/></svg>">
-    <link rel="shortcut icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='white' stroke='white' stroke-width='2' rx='8'/><circle cx='50' cy='50' r='15' fill='black'/><circle cx='50' cy='50' r='8' fill='white'/></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='white' stroke='white' stroke-width='2' rx='8'/><circle cx='50' cy='50' r='15' fill='black'/><circle cx='50' cy='50' r='8' fill='white'/></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>AMLO - Photography Pose Guide</title>
+  <meta name="description" content="11,000+ photography poses. 13 categories. Rp 79.000.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='white' stroke='white' stroke-width='2' rx='8'/><circle cx='50' cy='50' r='15' fill='black'/><circle cx='50' cy='50' r='8' fill='white'/></svg>">
+  <link rel="shortcut icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='white' stroke='white' stroke-width='2' rx='8'/><circle cx='50' cy='50' r='15' fill='black'/><circle cx='50' cy='50' r='8' fill='white'/></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='white' stroke='white' stroke-width='2' rx='8'/><circle cx='50' cy='50' r='15' fill='black'/><circle cx='50' cy='50' r='8' fill='white'/></svg>">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #000;
-            color: #fff;
-            line-height: 1.4;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
-            background-size: 20px 20px;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Animated background lines */
-        body::before, body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-        body::before {
-            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
-            background-size: 200% 100%;
-            animation: slideLine 10s linear infinite;
-        }
-        body::after {
-            background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
-            background-size: 100% 200%;
-            animation: slideLine2 15s linear infinite;
-        }
+    body {
+      font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.4;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
+      background-size: 20px 20px;
+    }
 
-        @keyframes slideLine {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-        @keyframes slideLine2 {
-            0% { background-position: 0 -200%; }
-            100% { background-position: 0 200%; }
-        }
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
 
-        .container {
-            max-width: 100%;
-            padding: 0 20px;
-            margin: 0 auto;
-        }
+    body::before {
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: slideLine 10s linear infinite;
+    }
 
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 40px 0 20px;
-        }
-        .app-name {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
+    body::after {
+      background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
+      background-size: 100% 200%;
+      animation: slideLine2 15s linear infinite;
+    }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 30px 0;
-            margin-bottom: 40px;
-        }
-        .hero-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 15px;
-            letter-spacing: -0.01em;
-        }
-        .hero-subtitle {
-            font-size: 1rem;
-            color: #999;
-            margin-bottom: 25px;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+    @keyframes slideLine {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
 
-        /* Download Buttons */
-        .download-section {
-            margin-bottom: 40px;
-        }
-        .download-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .download-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: center;
-        }
-        .download-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 24px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 2px solid #fff;
-            border-radius: 8px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            width: 100%;
-            max-width: 300px;
-        }
-        .btn-android {
-            background: #fff;
-            color: #000;
-        }
-        .btn-ios {
-            background: #000;
-            color: #fff;
-        }
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-        }
+    @keyframes slideLine2 {
+      0% { background-position: 0 -200%; }
+      100% { background-position: 0 200%; }
+    }
 
-        /* Price Section */
-        .price-section {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.02);
-        }
-        .price-label {
-            font-size: 0.9rem;
-            color: #999;
-            margin-bottom: 8px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .price {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px; /* Adds space between old and new prices */
-            margin-bottom: 8px;
-        }
-        .old-price {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: #666; /* Lighter color for the old price */
-            text-decoration: line-through;
-            letter-spacing: -0.01em;
-        }
-        .new-price {
-            font-size: 2.2rem; /* Larger font size for the new price */
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: -0.01em;
-        }
-        .price-note {
-            font-size: 0.9rem;
-            color: #999;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 15px;
-        }
-        .price-explanation {
-            font-size: 0.85rem;
-            color: #FFD700;
-            line-height: 1.5;
-            max-width: 500px;
-            margin: 0 auto;
-            font-weight: 400;
-        }
+    .container {
+      max-width: 100%;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 30px 0;
-            color: #666;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .footer-text {
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-            font-weight: 400;
-        }
-        .domain {
-            font-weight: 600;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .header {
+      text-align: center;
+      padding: 40px 0 20px;
+    }
 
-        /* Responsive */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-            
-            .app-name {
-                font-size: 2rem;
-            }
-            
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            
-            .old-price {
-                font-size: 1.2rem;
-            }
-            .new-price {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    .app-name {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 30px 0;
+      margin-bottom: 40px;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 15px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: #999;
+      margin-bottom: 25px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .download-section {
+      margin-bottom: 40px;
+    }
+
+    .download-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .download-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .download-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .btn-android {
+      background: #fff;
+      color: #000;
+    }
+
+    .btn-ios {
+      background: #000;
+      color: #fff;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    }
+
+    .price-section {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .price-label {
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 8px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+      color: #FFD700;
+    }
+
+    .original-price {
+      text-decoration: line-through;
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .price-note {
+      font-size: 0.9rem;
+      color: #999;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 15px;
+    }
+
+    .price-explanation {
+      font-size: 0.85rem;
+      color: #FFD700;
+      line-height: 1.5;
+      max-width: 500px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #666;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-text {
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .domain {
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .app-name {
+        font-size: 2rem;
+      }
+
+      .hero-title {
+        font-size: 1.8rem;
+      }
+
+      .price {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-                <header class="header">
-            <h1 class="app-name">AMLO</h1>
-        </header>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="app-name">AMLO</h1>
+    </header>
 
-                <section class="hero">
-            <h2 class="hero-title">11,000+ Poses</h2>
-            <p class="hero-subtitle">
-                13 categories • 80+ subcategories
-            </p>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2 class="hero-title">11,000+ Poses</h2>
+      <p class="hero-subtitle">13 categories • 80+ subcategories</p>
+    </section>
 
-                <section class="download-section">
-            <h3 class="download-title">Download Now</h3>
-            <div class="download-buttons">
-                <a href="https://lynk.id/pixelas.cloud/VVORvR8" class="download-btn btn-android">
-                    □ Android
-                </a>
-                <a href="https://lynk.id/pixelas.cloud/dR2RmDJ" class="download-btn btn-ios">
-                    ○ iOS
-                </a>
-            </div>
-        </section>
+    <!-- Download Section -->
+    <section class="download-section">
+      <h3 class="download-title">Download Now</h3>
+      <div class="download-buttons">
+        <a href="https://lynk.id/pixelas.cloud/VVORvR8" class="download-btn btn-android">□ Android</a>
+        <a href="https://lynk.id/pixelas.cloud/dR2RmDJ" class="download-btn btn-ios">○ iOS</a>
+      </div>
+    </section>
 
-                <section class="price-section">
-            <div class="price-label">Price</div>
-            <div class="price">
-                <span class="old-price">Rp 185.000</span>
-                <div class="new-price">Rp 79.000</div>
-            </div>
-            <div class="price-note">One-time payment (1x bayar seumur hidup)</div>
-            <div class="price-explanation">
-                Rp 79.000 yang dibayarkan adalah biaya server dan maintenance. AMLO tidak mengambil keuntungan yang berarti dari biaya ini, karena harus membayarkan server dan maintenance jutaan rupiah setiap bulannya untuk menjaga aplikasi tetap berjalan dengan lancar.
-            </div>
-        </section>
+    <!-- Price Section -->
+    <section class="price-section">
+      <div class="price-label">Harga Diskon</div>
+      <div class="price">Rp 79.000</div>
+      <div class="original-price">Rp 185.000</div>
+      <div class="price-note">1x bayar seumur hidup</div>
+      <div class="price-explanation">
+        Rp 79.000 yang dibayarkan adalah biaya server dan maintenance. AMLO tidak mengambil keuntungan yang berarti dari biaya ini, karena harus membayarkan server dan maintenance jutaan rupiah setiap bulannya untuk menjaga aplikasi tetap berjalan dengan lancar.
+      </div>
+    </section>
 
-                <footer class="footer">
-            <p class="footer-text">© 2024 AMLO</p>
-            <p class="footer-text">Visit us at <span class="domain">amlo.site</span></p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="footer-text">© 2024 AMLO</p>
+      <p class="footer-text">Visit us at <span class="domain">amlo.site</span></p>
+    </footer>
+  </div>
 </body>
 </html>
