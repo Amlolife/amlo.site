@@ -131,6 +131,111 @@
             letter-spacing: 0.5px;
         }
 
+        /* Demo Section */
+        .demo-section {
+            margin-bottom: 40px;
+            padding: 30px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .demo-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .demo-subtitle {
+            font-size: 0.9rem;
+            color: #999;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .demo-timer {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .demo-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .demo-category {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .demo-category:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .demo-category.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .demo-category-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .demo-category-name {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .demo-poses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .demo-pose {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .demo-pose:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        .demo-note {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+            font-style: italic;
+        }
+
         /* Download Buttons */
         .download-section {
             margin-bottom: 40px;
@@ -256,6 +361,14 @@
             .price {
                 font-size: 1.8rem;
             }
+
+            .demo-categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .demo-poses {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -273,6 +386,47 @@
             <p class="hero-subtitle">
                 13 categories • 80+ subcategories
             </p>
+        </section>
+
+        <!-- Demo Section -->
+        <section class="demo-section">
+            <h3 class="demo-title">Try Demo (15 Minutes)</h3>
+            <p class="demo-subtitle">Experience the app before downloading</p>
+            
+            <div class="demo-timer" id="demoTimer">15:00</div>
+            
+            <div class="demo-categories" id="demoCategories">
+                <div class="demo-category active" data-category="wedding">
+                    <span class="demo-category-icon">👰</span>
+                    <div class="demo-category-name">Wedding</div>
+                </div>
+                <div class="demo-category" data-category="family">
+                    <span class="demo-category-icon">👨‍👩‍👧‍👦</span>
+                    <div class="demo-category-name">Family</div>
+                </div>
+                <div class="demo-category" data-category="modelling">
+                    <span class="demo-category-icon">👗</span>
+                    <div class="demo-category-name">Modelling</div>
+                </div>
+                <div class="demo-category" data-category="newborn">
+                    <span class="demo-category-icon">👶</span>
+                    <div class="demo-category-name">Newborn</div>
+                </div>
+                <div class="demo-category" data-category="corporate">
+                    <span class="demo-category-icon">💼</span>
+                    <div class="demo-category-name">Corporate</div>
+                </div>
+                <div class="demo-category" data-category="graduation">
+                    <span class="demo-category-icon">🎓</span>
+                    <div class="demo-category-name">Graduation</div>
+                </div>
+            </div>
+            
+            <div class="demo-poses" id="demoPoses">
+                <!-- Poses will be loaded here -->
+            </div>
+            
+            <p class="demo-note">Click categories to explore different poses • Demo expires in 15 minutes</p>
         </section>
 
         <!-- Download Section -->
@@ -301,5 +455,94 @@
             <p class="footer-text"><span class="domain">amlo.site</span></p>
         </footer>
     </div>
+
+    <script>
+        // Demo data
+        const demoData = {
+            wedding: [
+                "Bride Solo Portrait", "Couple Together", "First Dance", "Ring Exchange",
+                "Bride with Bouquet", "Groom Solo", "Wedding Party", "Family Photos"
+            ],
+            family: [
+                "Parents with Kids", "Grandparents", "Siblings", "Extended Family",
+                "Family Outdoors", "Family Indoor", "Kids Only", "Parents Only"
+            ],
+            modelling: [
+                "Fashion Portrait", "Editorial Pose", "Street Style", "Studio Shot",
+                "Casual Modelling", "Professional", "Creative Pose", "Simple Portrait"
+            ],
+            newborn: [
+                "Baby Sleeping", "Baby Awake", "With Parents", "Solo Baby",
+                "Baby with Props", "Family with Baby", "Baby Details", "Baby in Basket"
+            ],
+            corporate: [
+                "Business Portrait", "Team Photo", "Office Setting", "Professional Headshot",
+                "Meeting Scene", "CEO Portrait", "Corporate Event", "Business Casual"
+            ],
+            graduation: [
+                "Graduation Cap", "Diploma Hold", "Family Celebration", "Solo Graduate",
+                "Group Graduates", "Outdoor Graduation", "Indoor Ceremony", "Graduation Party"
+            ]
+        };
+
+        let currentCategory = 'wedding';
+        let timeLeft = 15 * 60; // 15 minutes in seconds
+        let demoActive = true;
+
+        // Timer function
+        function updateTimer() {
+            if (!demoActive) return;
+            
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('demoTimer').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                demoActive = false;
+                document.getElementById('demoTimer').textContent = "Demo Expired";
+                document.getElementById('demoTimer').style.color = "#ff6b6b";
+                document.querySelector('.demo-note').textContent = "Demo has expired. Download the full app to continue exploring!";
+                return;
+            }
+            
+            timeLeft--;
+            setTimeout(updateTimer, 1000);
+        }
+
+        // Load poses for category
+        function loadPoses(category) {
+            const posesContainer = document.getElementById('demoPoses');
+            const poses = demoData[category] || [];
+            
+            posesContainer.innerHTML = poses.map(pose => 
+                `<div class="demo-pose">${pose}</div>`
+            ).join('');
+        }
+
+        // Category click handler
+        document.getElementById('demoCategories').addEventListener('click', (e) => {
+            if (!demoActive) return;
+            
+            const category = e.target.closest('.demo-category');
+            if (!category) return;
+            
+            // Remove active class from all categories
+            document.querySelectorAll('.demo-category').forEach(cat => 
+                cat.classList.remove('active')
+            );
+            
+            // Add active class to clicked category
+            category.classList.add('active');
+            
+            // Load poses for selected category
+            currentCategory = category.dataset.category;
+            loadPoses(currentCategory);
+        });
+
+        // Initialize demo
+        loadPoses(currentCategory);
+        updateTimer();
+    </script>
 </body>
 </html>
