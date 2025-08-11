@@ -213,6 +213,73 @@
       font-weight: 400;
     }
 
+    .capacity-section {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .capacity-title {
+      font-size: 0.9rem;
+      color: #ff6b6b;
+      margin-bottom: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .capacity-bar-container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      height: 20px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .capacity-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+      border-radius: 10px;
+      transition: width 0.5s ease;
+      position: relative;
+    }
+
+    .capacity-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .capacity-percentage {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ff6b6b;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .capacity-warning {
+      font-size: 0.8rem;
+      color: #ffaa00;
+      text-align: center;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
     .footer {
       text-align: center;
       padding: 30px 0;
@@ -251,6 +318,46 @@
       }
     }
   </style>
+  
+  <script>
+    // Capacity bar animation
+    let currentCapacity = 95.47;
+    const maxCapacity = 99.9; // Never reach 100%
+    
+    function updateCapacity() {
+      // Random increment between 0.01 and 0.05
+      const increment = Math.random() * 0.04 + 0.01;
+      
+      // Only increase if we haven't reached max capacity
+      if (currentCapacity < maxCapacity) {
+        currentCapacity += increment;
+        
+        // Ensure we don't exceed max capacity
+        if (currentCapacity > maxCapacity) {
+          currentCapacity = maxCapacity;
+        }
+        
+        // Update the display
+        const percentage = currentCapacity.toFixed(2);
+        document.getElementById('capacityPercentage').textContent = percentage + '%';
+        document.getElementById('capacityBar').style.width = percentage + '%';
+      }
+    }
+    
+    // Update capacity every 3-8 seconds with random intervals
+    function scheduleNextUpdate() {
+      const delay = Math.random() * 5000 + 3000; // 3-8 seconds
+      setTimeout(() => {
+        updateCapacity();
+        scheduleNextUpdate();
+      }, delay);
+    }
+    
+    // Start the updates when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      scheduleNextUpdate();
+    });
+  </script>
 </head>
 <body>
   <div class="container">
@@ -263,6 +370,18 @@
     <section class="hero">
       <h2 class="hero-title">11,000+ Poses</h2>
       <p class="hero-subtitle">13 categories • 80+ subcategories</p>
+    </section>
+
+    <!-- Server Capacity Warning -->
+    <section class="capacity-section">
+      <div class="capacity-title">⚠️ Perhatian!</div>
+      <div class="capacity-percentage" id="capacityPercentage">95.47%</div>
+      <div class="capacity-bar-container">
+        <div class="capacity-bar" id="capacityBar" style="width: 95.47%"></div>
+      </div>
+      <div class="capacity-warning">
+        Server hampir mencapai batas maksimum pengguna. <span style="color: #ff0000; font-weight: bold;">Registrasi Pengguna Baru akan ditutup</span> sementara ketika mencapai 100% untuk menjaga stabilitas aplikasi.
+      </div>
     </section>
 
     <!-- Download Section -->
