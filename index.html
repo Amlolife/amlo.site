@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>AMLO - Photography Pose Guide</title>
-  <meta name="description" content="11,000+ photography poses. 13 categories. Rp 99.000.">
+  <meta name="description" content="Jangan Jadi Fotografer Buta Pose Lagi Abangku! 11,000+ inspirasi pose profesional. 13 categories. Rp 79.000 - Akses seumur hidup.">
 
   <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='white' stroke='white' stroke-width='2' rx='8'/><circle cx='50' cy='50' r='15' fill='black'/><circle cx='50' cy='50' r='8' fill='white'/></svg>">
   <link rel="shortcut icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='white' stroke='white' stroke-width='2' rx='8'/><circle cx='50' cy='50' r='15' fill='black'/><circle cx='50' cy='50' r='8' fill='white'/></svg>">
@@ -85,6 +85,15 @@
       letter-spacing: -0.02em;
     }
 
+    .tagline {
+      font-size: 0.9rem;
+      color: #FFD700;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0;
+    }
+
     .hero {
       text-align: center;
       padding: 30px 0;
@@ -106,6 +115,85 @@
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+    }
+
+    .gallery-section {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .gallery-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 30px;
+      letter-spacing: -0.01em;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px 15px;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .pose-preview {
+      text-align: center;
+    }
+
+    .pose-category {
+      font-size: 0.8rem;
+      color: #FFD700;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .pose-placeholder {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .pose-image {
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pose-description {
+      font-size: 0.75rem;
+      color: #ccc;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .gallery-note {
+      font-size: 0.8rem;
+      color: #888;
+      font-style: italic;
+      margin-top: 15px;
     }
 
     .download-section {
@@ -162,6 +250,49 @@
       box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
     }
 
+    .testimonials-section {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .testimonials-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 30px;
+      letter-spacing: -0.01em;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .testimonial {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 25px 20px;
+      text-align: left;
+    }
+
+    .testimonial-quote {
+      font-size: 0.9rem;
+      color: #fff;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-size: 0.8rem;
+      color: #FFD700;
+      font-weight: 600;
+    }
+
     .price-section {
       text-align: center;
       margin-bottom: 40px;
@@ -213,73 +344,6 @@
       font-weight: 400;
     }
 
-    .capacity-section {
-      margin: 20px 0;
-      padding: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .capacity-title {
-      font-size: 0.9rem;
-      color: #ff6b6b;
-      margin-bottom: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-align: center;
-    }
-
-    .capacity-bar-container {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      height: 20px;
-      margin-bottom: 10px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .capacity-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
-      border-radius: 10px;
-      transition: width 0.5s ease;
-      position: relative;
-    }
-
-    .capacity-bar::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      animation: shimmer 2s infinite;
-    }
-
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    .capacity-percentage {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #ff6b6b;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .capacity-warning {
-      font-size: 0.8rem;
-      color: #ffaa00;
-      text-align: center;
-      line-height: 1.4;
-      font-weight: 500;
-    }
-
     .footer {
       text-align: center;
       padding: 30px 0;
@@ -309,8 +373,30 @@
         font-size: 2rem;
       }
 
+      .tagline {
+        font-size: 0.8rem;
+      }
+
       .hero-title {
         font-size: 1.8rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .gallery-item {
+        padding: 15px 10px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .testimonial {
+        padding: 20px 15px;
       }
 
       .price {
@@ -318,91 +404,111 @@
       }
     }
   </style>
-  
-  <script>
-    // Capacity bar animation
-    let currentCapacity = 95.47;
-    const maxCapacity = 99.9; // Never reach 100%
-    
-    function updateCapacity() {
-      // Random increment between 0.01 and 0.05
-      const increment = Math.random() * 0.04 + 0.01;
-      
-      // Only increase if we haven't reached max capacity
-      if (currentCapacity < maxCapacity) {
-        currentCapacity += increment;
-        
-        // Ensure we don't exceed max capacity
-        if (currentCapacity > maxCapacity) {
-          currentCapacity = maxCapacity;
-        }
-        
-        // Update the display
-        const percentage = currentCapacity.toFixed(2);
-        document.getElementById('capacityPercentage').textContent = percentage + '%';
-        document.getElementById('capacityBar').style.width = percentage + '%';
-      }
-    }
-    
-    // Update capacity every 3-8 seconds with random intervals
-    function scheduleNextUpdate() {
-      const delay = Math.random() * 5000 + 3000; // 3-8 seconds
-      setTimeout(() => {
-        updateCapacity();
-        scheduleNextUpdate();
-      }, delay);
-    }
-    
-    // Start the updates when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-      scheduleNextUpdate();
-    });
-  </script>
 </head>
 <body>
   <div class="container">
     <!-- Header -->
     <header class="header">
       <h1 class="app-name">AMLO</h1>
+      <p class="tagline">Aplikasi FG Anti Buta Pose</p>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-      <h2 class="hero-title">11,000+ Poses</h2>
-      <p class="hero-subtitle">13 categories • 80+ subcategories</p>
+      <h2 class="hero-title">Jangan Jadi Fotografer Buta Pose Lagi Abangku!</h2>
+      <p class="hero-subtitle">Dengan 11.000+ inspirasi pose + Fitur Share ke Client</p>
     </section>
 
-    <!-- Server Capacity Warning -->
-    <section class="capacity-section">
-      <div class="capacity-title">⚠️ Perhatian!</div>
-      <div class="capacity-percentage" id="capacityPercentage">95.47%</div>
-      <div class="capacity-bar-container">
-        <div class="capacity-bar" id="capacityBar" style="width: 95.47%"></div>
+    <!-- Visual Proof Section -->
+    <section class="gallery-section">
+      <h3 class="gallery-title">Intip Sebagian Kecil dari Ribuan Pose Kami</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="pose-preview">
+            <div class="pose-category">Portrait</div>
+            <img src="image-1.jpg" alt="Portrait Pose" class="pose-image">
+            <div class="pose-description">Pose Natural & Ekspresif</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="pose-preview">
+            <div class="pose-category">Couple</div>
+            <img src="image-2.jpg" alt="Couple Pose" class="pose-image">
+            <div class="pose-description">Romantic & Intimate</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="pose-preview">
+            <div class="pose-category">Group</div>
+            <img src="image-3.jpg" alt="Group Pose" class="pose-image">
+            <div class="pose-description">Dynamic & Fun</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="pose-preview">
+            <div class="pose-category">Fashion</div>
+            <img src="image-4.jpg" alt="Fashion Pose" class="pose-image">
+            <div class="pose-description">Stylish & Trendy</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="pose-preview">
+            <div class="pose-category">Wedding</div>
+            <img src="image-5.jpg" alt="Wedding Pose" class="pose-image">
+            <div class="pose-description">Elegant & Timeless</div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="pose-preview">
+            <div class="pose-category">Creative</div>
+            <img src="image-6.jpg" alt="Creative Pose" class="pose-image">
+            <div class="pose-description">Artistic & Unique</div>
+          </div>
+        </div>
       </div>
-      <div class="capacity-warning">
-        Server hampir mencapai batas maksimum pengguna. <span style="color: #ff0000; font-weight: bold;">Registrasi Pengguna Baru akan ditutup</span> sementara ketika mencapai 100% untuk menjaga stabilitas aplikasi.
-      </div>
+      <div class="gallery-note">*Hanya menampilkan 6 dari 13 kategori yang tersedia</div>
     </section>
 
     <!-- Download Section -->
     <section class="download-section">
       <h3 class="download-title">Download Now</h3>
       <div class="download-buttons">
-        <a href="https://lynk.id/pixelas.cloud/VVORvR8" class="download-btn btn-android">□ Android</a>
-        <a href="https://lynk.id/pixelas.cloud/dR2RmDJ" class="download-btn btn-ios">○ iOS</a>
+        <a href="https://lynk.id/pixelas.cloud/VVORvR8" class="download-btn btn-android">□ Dapatkan untuk Android</a>
+        <a href="https://lynk.id/pixelas.cloud/dR2RmDJ" class="download-btn btn-ios">○ Dapatkan untuk iOS</a>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <h3 class="testimonials-title">Apa Kata Para Fotografer & Kreator?</h3>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="testimonial-quote">"Dulu kalau foto prewedding suka bingung variasi pose. Sekarang tinggal buka AMLO, udah ada ribuan referensi. Klien juga jadi lebih puas sama hasil foto mereka."</div>
+          <div class="testimonial-author">- Rizky P., Fotografer Wedding Jakarta</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-quote">"Sebagai fotografer wedding, AMLO ngebantu banget buat variasi pose pasangan. Klien jadi gak bosen dengan pose yang itu-itu aja. ROI nya kerasa banget!"</div>
+          <div class="testimonial-author">- Maya S., Wedding Photographer Surabaya</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-quote">"Studio foto saya jadi lebih efisien. Klien yang biasanya kaku di depan kamera, sekarang bisa langsung dapat pose yang natural. Worth it sih 79rb ini."</div>
+          <div class="testimonial-author">- Tommy H., Owner Studio Foto Bandung</div>
+        </div>
       </div>
     </section>
 
     <!-- Price Section -->
     <section class="price-section">
       <div class="price-label">Harga</div>
-      <div class="price">Rp 99.000</div>
+      <div class="price">Rp 79.000</div>
       <div class="original-price">Rp 185.000</div>
       <div class="price-note">One Time Payment (1x bayar seumur hidup)</div>
       <div class="price-explanation">
-        Dikarenakan jumlah pengguna AMLO yang sudah sangat banyak, kami berencana membatasi pembelian untuk pengguna baru dalam waktu dekat. Langkah ini diambil agar server tetap stabil dan semua pengguna bisa menikmati performa terbaik. 
-Bagi yang belum memiliki akses, segera amankan aplikasi Anda sekarang sebelum pendaftaran untuk pengguna baru ditutup.
-Harga saat ini adalah Rp 99.000 (biaya server & maintenance), digunakan untuk menjaga aplikasi tetap berjalan lancar.
+        Dikarenakan jumlah pengguna AMLO yang sudah sangat banyak, kami berencana membatasi pembelian untuk pengguna baru dalam waktu dekat. Langkah ini diambil agar server tetap stabil dan semua pengguna bisa menikmati performa terbaik.
+        <br><br>
+        Investasi satu kali sebesar Rp 79.000 ini memastikan Anda mendapatkan akses seumur hidup ke database yang terus kami perbarui, server berkecepatan tinggi, dan maintenance tanpa biaya tambahan.
+        <br><br>
+        Bagi yang belum memiliki akses, segera amankan aplikasi Anda sekarang sebelum pendaftaran untuk pengguna baru ditutup.
       </div>
     </section>
 
