@@ -420,6 +420,55 @@
       font-weight: 700;
     }
 
+    /* Slot Counter Animation */
+    .slot-counter {
+      display: inline-block;
+      position: relative;
+      perspective: 300px;
+      font-family: 'Courier New', monospace;
+      font-weight: 900;
+      font-size: 1.1em;
+      color: #FFD700;
+      background: linear-gradient(135deg, #333, #555);
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid #666;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .slot-counter.flipping {
+      animation: paperFlip 0.6s ease-in-out;
+    }
+
+    @keyframes paperFlip {
+      0% {
+        transform: rotateX(0deg);
+        background: linear-gradient(135deg, #333, #555);
+      }
+      25% {
+        transform: rotateX(-90deg);
+        background: linear-gradient(135deg, #222, #333);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      }
+      50% {
+        transform: rotateX(-180deg);
+        background: linear-gradient(135deg, #111, #222);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+      }
+      75% {
+        transform: rotateX(-270deg);
+        background: linear-gradient(135deg, #222, #333);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      }
+      100% {
+        transform: rotateX(-360deg);
+        background: linear-gradient(135deg, #333, #555);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+    }
+
     .exclusive-warning {
       text-align: center;
       margin-top: 15px;
@@ -951,15 +1000,6 @@
           
           <div class="announcement-text">
             <p>Namun kami tidak bisa menjual dengan harga subsidi seperti sebelumnya karena harga server tidak dapat kami tanggung sendiri.</p>
-            
-            <div class="price-info">
-              <div class="new-price">AMLO App sekarang dijual dengan harga <strong>Rp 185.000</strong></div>
-              <div class="price-details">(Sekali bayar alias permanen Purchase, Bukan Langganan)</div>
-            </div>
-            
-            <p class="server-info">Harga ini sudah termasuk slot server untuk User baru.</p>
-            
-            <p class="thank-you">Terima Kasih.</p>
           </div>
         </div>
       </div>
@@ -968,7 +1008,7 @@
       <div class="order-buttons" id="orderButtons">
         <h3 class="download-title">Silahkan Melakukan Purchase melalui Link ini</h3>
         <div class="purchase-notice">
-          <p>🔥 <strong>HANYA 4 SLOT TERSISA</strong> - User Baru Terbatas</p>
+          <p>🔥 <strong>HANYA <span class="slot-counter" id="slotCounter">10</span> SLOT TERSISA</strong> - User Baru Terbatas</p>
           <p>💰 Harga Final: Rp 185.000 (Permanen, Bukan Langganan)</p>
         </div>
         <div class="download-buttons">
@@ -1035,6 +1075,78 @@
   </div>
 
   <script>
+    // Slot Counter Functionality
+    let slotCount = 10;
+    let hasStartedCounting = false;
+    let countdownInterval;
+
+    // Function to update slot counter with animation
+    function updateSlotCounter(newCount) {
+      const counter = document.getElementById('slotCounter');
+      
+      // Add flip animation
+      counter.classList.add('flipping');
+      
+      // Change number halfway through animation
+      setTimeout(() => {
+        counter.textContent = newCount;
+      }, 300);
+      
+      // Remove animation class
+      setTimeout(() => {
+        counter.classList.remove('flipping');
+      }, 600);
+    }
+
+    // Function to start the hourly countdown
+    function startSlotCountdown() {
+      if (hasStartedCounting) return;
+      hasStartedCounting = true;
+
+      // Start countdown after 3 seconds
+      setTimeout(() => {
+        // Decrease slot count every hour (3600000 ms)
+        // For testing, use 5 seconds instead: 5000
+        countdownInterval = setInterval(() => {
+          slotCount--;
+          
+          // If it reaches 1, cycle back to 10
+          if (slotCount < 1) {
+            slotCount = 10;
+          }
+          
+          updateSlotCounter(slotCount);
+        }, 3600000); // 1 hour = 3600000 milliseconds
+        
+        // For testing purposes, uncomment the line below and comment the line above
+        // }, 5000); // 5 seconds for testing
+        
+      }, 3000); // Wait 3 seconds after user sees it
+    }
+
+    // Intersection Observer to detect when slot counter is visible
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasStartedCounting) {
+          startSlotCountdown();
+        }
+      });
+    }, observerOptions);
+
+    // Start observing when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      const slotCounter = document.getElementById('slotCounter');
+      if (slotCounter) {
+        observer.observe(slotCounter.parentElement);
+      }
+    });
+
     // Countdown Timer Functionality
     function updateCountdown() {
       const now = new Date();
@@ -1065,31 +1177,34 @@
     updateCountdown(); // Initial call
 
     // Form submission handling
-    document.querySelector('.preorder-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(this);
-      
-      // Submit to Formspree
-      fetch(this.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          // Show success message
-          document.querySelector('.preorder-form').style.display = 'none';
-          document.getElementById('successMessage').style.display = 'block';
-        } else {
+    const preorderForm = document.querySelector('.preorder-form');
+    if (preorderForm) {
+      preorderForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        
+        // Submit to Formspree
+        fetch(this.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            // Show success message
+            document.querySelector('.preorder-form').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+          } else {
+            alert('Terjadi kesalahan. Silakan coba lagi.');
+          }
+        }).catch(error => {
           alert('Terjadi kesalahan. Silakan coba lagi.');
-        }
-      }).catch(error => {
-        alert('Terjadi kesalahan. Silakan coba lagi.');
+        });
       });
-    });
+    }
 
     function openImageViewer(imageSrc, category, description) {
       const viewer = document.getElementById('imageViewer');
