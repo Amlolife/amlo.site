@@ -310,20 +310,125 @@
 
     .countdown-container {
       text-align: center;
-      background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 69, 0, 0.1));
-      border: 2px solid rgba(255, 69, 0, 0.3);
+      background: linear-gradient(135deg, rgba(0, 100, 255, 0.1), rgba(0, 150, 255, 0.1));
+      border: 2px solid rgba(0, 150, 255, 0.3);
       border-radius: 12px;
       padding: 30px 20px;
       margin-bottom: 30px;
     }
 
     .countdown-title {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      color: #FF4500;
+      color: #00BFFF;
       margin-bottom: 20px;
       text-transform: uppercase;
       letter-spacing: 1px;
+    }
+
+    .announcement-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .announcement-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .user-limit {
+      font-size: 1rem;
+      color: #FFD700;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .announcement-text {
+      text-align: left;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .announcement-text p {
+      margin-bottom: 15px;
+    }
+
+    .price-info {
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 8px;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .new-price {
+      font-size: 1.1rem;
+      color: #FFD700;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .new-price strong {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #FFA500;
+    }
+
+    .price-details {
+      font-size: 0.9rem;
+      color: #DDD;
+      font-style: italic;
+    }
+
+    .server-info {
+      color: #00FF7F !important;
+      font-weight: 500;
+    }
+
+    .thank-you {
+      color: #00BFFF !important;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 0 !important;
+    }
+
+    .purchase-notice {
+      background: rgba(255, 69, 0, 0.1);
+      border: 1px solid rgba(255, 69, 0, 0.3);
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .purchase-notice p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #FF6B6B;
+    }
+
+    .purchase-notice strong {
+      color: #FF4500;
+      font-weight: 700;
+    }
+
+    .exclusive-warning {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .exclusive-warning small {
+      color: #888;
+      font-style: italic;
+      font-size: 0.8rem;
     }
 
     .countdown-timer {
@@ -725,6 +830,44 @@
       .countdown-timer {
         gap: 15px;
       }
+
+      .announcement-content {
+        padding: 0 10px;
+      }
+
+      .announcement-title {
+        font-size: 1.1rem;
+      }
+
+      .user-limit {
+        font-size: 0.9rem;
+      }
+
+      .announcement-text {
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .price-info {
+        padding: 12px;
+        margin: 15px 0;
+      }
+
+      .new-price {
+        font-size: 1rem;
+      }
+
+      .new-price strong {
+        font-size: 1.2rem;
+      }
+
+      .purchase-notice {
+        padding: 12px;
+      }
+
+      .purchase-notice p {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -798,68 +941,42 @@
       <div class="gallery-note">*Hanya menampilkan 6 dari 13 kategori yang tersedia</div>
     </section>
 
-    <!-- Countdown & Order Section -->
+    <!-- Sales Reopening Section -->
     <section class="order-section">
       <div class="countdown-container">
-        <h3 class="countdown-title">⏰ PENJUALAN AKAN DITUTUP DALAM</h3>
-        <div class="countdown-timer" id="countdown">
-          <div class="time-unit">
-            <span class="time-value" id="hours">00</span>
-            <span class="time-label">JAM</span>
-          </div>
-          <div class="time-unit">
-            <span class="time-value" id="minutes">00</span>
-            <span class="time-label">MENIT</span>
-          </div>
-          <div class="time-unit">
-            <span class="time-value" id="seconds">00</span>
-            <span class="time-label">DETIK</span>
+        <h3 class="countdown-title">� PENGUMUMAN PENTING</h3>
+        <div class="announcement-content">
+          <h4 class="announcement-title">Penjualan AMLO App Sudah Dibuka Kembali</h4>
+          <p class="user-limit">(Hanya untuk 10 User Baru)</p>
+          
+          <div class="announcement-text">
+            <p>Namun kami tidak bisa menjual dengan harga subsidi seperti sebelumnya karena harga server tidak dapat kami tanggung sendiri.</p>
+            
+            <div class="price-info">
+              <div class="new-price">AMLO App sekarang dijual dengan harga <strong>Rp 185.000</strong></div>
+              <div class="price-details">(Sekali bayar alias permanen Purchase, Bukan Langganan)</div>
+            </div>
+            
+            <p class="server-info">Harga ini sudah termasuk slot server untuk User baru.</p>
+            
+            <p class="thank-you">Terima Kasih.</p>
           </div>
         </div>
-        <div class="countdown-warning">Pendaftaran dan Penjualan telah ditutup dikarenakan Server sudah Over Limit melebihi biaya maintanance.</div>
       </div>
 
-      <!-- Order Buttons (Active before countdown ends) -->
+      <!-- Purchase Section -->
       <div class="order-buttons" id="orderButtons">
-        <h3 class="download-title">Download Sekarang</h3>
-        <div class="download-buttons">
-          <a href="https://lynk.id/pixelas.cloud/VVORvR8" class="download-btn btn-android">□ Dapatkan untuk Android</a>
-          <a href="https://lynk.id/pixelas.cloud/dR2RmDJ" class="download-btn btn-ios">○ Dapatkan untuk iOS</a>
+        <h3 class="download-title">Silahkan Melakukan Purchase melalui Link ini</h3>
+        <div class="purchase-notice">
+          <p>🔥 <strong>HANYA 10 SLOT TERSISA</strong> - User Baru Terbatas</p>
+          <p>💰 Harga Final: Rp 185.000 (Permanen, Bukan Langganan)</p>
         </div>
-      </div>
-
-      <!-- Pre-Order Form (Hidden, shows after countdown ends) -->
-      <div class="preorder-section" id="preorderSection" style="display: none;">
-        <h3 class="preorder-title">📝 PENJUALAN DITUTUP - DAFTAR PRE-ORDER</h3>
-        <p class="preorder-subtitle">Daftarkan email & WhatsApp Anda untuk mendapat notifikasi saat penjualan dibuka kembali (Pre-Order Rp 99.000)</p>
-        
-        <form class="preorder-form" action="https://formspree.io/f/mzzvwjjo" method="POST">
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="contoh@email.com">
-          </div>
-          
-          <div class="form-group">
-            <label for="whatsapp">WhatsApp Number</label>
-            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="08123456789">
-          </div>
-          
-          <div class="form-group">
-            <label for="name">Nama Lengkap</label>
-            <input type="text" id="name" name="name" required placeholder="Nama Anda">
-          </div>
-          
-          <button type="submit" class="preorder-btn">🔔 Daftar Pre-Order Sekarang</button>
-          
-          <div class="preorder-note">
-            * Anda akan mendapat email konfirmasi dan notifikasi WhatsApp saat penjualan dibuka kembali
-          </div>
-        </form>
-
-        <!-- Success Message (Hidden by default) -->
-        <div class="success-message" id="successMessage" style="display: none;">
-          <h4>✅ Berhasil Terdaftar!</h4>
-          <p>Terima kasih! Kami akan mengirim notifikasi ke email dan WhatsApp Anda saat penjualan AMLO dibuka kembali.</p>
+        <div class="download-buttons">
+          <a href="https://lynk.id/pixelas.cloud/VVORvR8" class="download-btn btn-android">□ Purchase untuk Android</a>
+          <a href="https://lynk.id/pixelas.cloud/dR2RmDJ" class="download-btn btn-ios">○ Purchase untuk iOS</a>
+        </div>
+        <div class="exclusive-warning">
+          <small>* Slot server terbatas - Setelah 10 user terpenuhi, penjualan akan ditutup kembali</small>
         </div>
       </div>
     </section>
@@ -883,8 +1000,8 @@
       </div>
     </section>
 
-    <!-- Price Section -->
-    <section class="price-section">
+    <!-- Price Section - Hidden for Limited Access -->
+    <section class="price-section" style="display: none;">
       <div class="price-label">Harga</div>
       <div class="price">Rp 99.000</div>
       <div class="original-price">Rp 185.000</div>
