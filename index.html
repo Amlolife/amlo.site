@@ -1088,12 +1088,12 @@
         // Immediately decrease by 1 when user first sees it
         slotCount--;
         
-          // If it reaches 1, cycle back to 7
-          if (slotCount < 1) {
-            slotCount = 7;
-          }        updateSlotCounter(slotCount);
+        // If it reaches 1, cycle back to 7
+        if (slotCount < 1) {
+          slotCount = 7;
+        }
         
-        // Then continue with hourly countdown
+        updateSlotCounter(slotCount);        // Then continue with hourly countdown
         countdownInterval = setInterval(() => {
           slotCount--;
           
