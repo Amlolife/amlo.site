@@ -1093,7 +1093,9 @@
           slotCount = 7;
         }
         
-        updateSlotCounter(slotCount);        // Then continue with hourly countdown
+        updateSlotCounter(slotCount);
+        
+        // Then continue with hourly countdown
         countdownInterval = setInterval(() => {
           slotCount--;
           
